@@ -1,0 +1,17 @@
+[workspace]
+resolver = "2"
+members = [
+    "zenoh-util-freebsd",
+    "zenoh-link-commons-patched",
+    "zenoh-link-tls-patched",
+    "zenoh-link-patched",
+    "zenoh-link-obfs",
+]
+
+# Inside this workspace the patched crates replace their crates.io versions,
+# so the unpatched zenoh-link-* crates pulled by zenoh-link resolve to them too.
+[patch.crates-io]
+zenoh-util         = { path = "./zenoh-util-freebsd" }
+zenoh-link-commons = { path = "./zenoh-link-commons-patched" }
+zenoh-link-tls     = { path = "./zenoh-link-tls-patched" }
+zenoh-link         = { path = "./zenoh-link-patched" }
