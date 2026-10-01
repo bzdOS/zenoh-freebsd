@@ -6,6 +6,7 @@ members = [
     "zenoh-link-tls-patched",
     "zenoh-link-patched",
     "zenoh-link-obfs",
+    "zenohd",
 ]
 
 # Inside this workspace the patched crates replace their crates.io versions,
